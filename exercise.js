@@ -4,8 +4,11 @@ function getCategories(numOfCategories){
 }
 
 function getQuestions(category){
-    for (let i = 0; i < length(category); i+=1){
-        question[i] = fetchQuestionsFromAPI(category)
+    let questionsArray = [];
+    for (let i = 0; i < category.length; i+=1){
+        let currentCategory = category[i];
+        let questionsForThisCatogory = fetchQuestionsFromAPI(currentCategory);
+        questionsArray.push(questionsForThisCatogory);
     }
-    return question
+    return questionsArray
 }
