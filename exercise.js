@@ -12,3 +12,8 @@ function getQuestions(category){
     }
     return questionsArray
 }
+
+
+let categoriesForGames = getCategories(5)
+let questionForGames = getQuestions(categoriesForGames)
+addToGame(categoriesForGames,questionForGames)
